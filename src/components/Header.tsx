@@ -16,7 +16,7 @@ export default function Header() {
       <nav className={open ? "open" : ""} aria-label="Main">
         {LINKS.map(([h, t]) => <Link key={h} href={h} className={on(h) ? "on" : ""} onClick={() => setOpen(false)}>{t}</Link>)}
       </nav>
-      <a className="btn" href={SITE.resume || "#"}>Resume ↗</a>
+      <a className="rlink" href={SITE.resume || "#"}>Resume ↗</a>
       <button className="menu" aria-expanded={open} onClick={() => setOpen(!open)}>Menu</button>
     </div></header>
   );

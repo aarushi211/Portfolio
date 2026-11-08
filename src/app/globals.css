@@ -660,5 +660,236 @@ dialog::backdrop {
   margin-top: 4px;
   color: var(--cy);
 }
-/* Optional: faint grid like the first design. Uncomment to enable.
-body{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px} */
+
+/* ===== EXPERIENCE PAGE ===== */
+
+.experience-page {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.experience-intro {
+  margin-bottom: 64px;
+}
+
+.experience-eyebrow {
+  display: block;
+  color: var(--cy);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin-bottom: 16px;
+}
+
+.experience-intro h1 {
+  font-size: clamp(42px, 6vw, 64px);
+  margin-bottom: 24px;
+}
+
+.experience-intro p {
+  max-width: 68ch;
+  color: var(--mut);
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+/* Timeline */
+
+.experience-timeline {
+  position: relative;
+  padding-left: 36px;
+  border-left: 1px solid var(--line);
+}
+
+.experience-entry {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.experience-dot {
+  position: absolute;
+  left: -43px;
+  top: 28px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--ac);
+}
+
+/* Expandable cards */
+
+.experience-details {
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.experience-details[open] {
+  border-color: var(--pu2);
+}
+
+.experience-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-heading::-webkit-details-marker {
+  display: none;
+}
+
+.experience-heading::marker {
+  content: "";
+}
+
+.experience-heading-text {
+  min-width: 0;
+}
+
+.experience-date {
+  display: block;
+  font-size: 13px;
+  color: var(--cy);
+  margin-bottom: 10px;
+}
+
+.experience-heading h2 {
+  font-family: var(--sans);
+  font-size: clamp(19px, 2.5vw, 24px);
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.experience-role {
+  color: var(--ac);
+  font-size: 15px;
+  margin: 0;
+}
+
+.experience-summary {
+  color: var(--mut);
+  font-size: 14px;
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+
+.experience-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--mut);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.experience-heading:hover .experience-toggle {
+  color: var(--ac);
+}
+
+.experience-details[open] .experience-toggle {
+  transform: rotate(180deg);
+  color: var(--ac);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-toggle {
+    transition: none;
+  }
+}
+
+.experience-details[open] .experience-toggle {
+  transform: rotate(45deg);
+}
+
+/* Expanded content */
+
+.experience-content {
+  padding: 0 28px 28px;
+  border-top: 1px solid var(--line);
+}
+
+.experience-content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+}
+
+.experience-content ul {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--mut);
+  line-height: 1.8;
+}
+
+.experience-content li {
+  padding-left: 4px;
+  margin-bottom: 12px;
+}
+
+.experience-content li::marker {
+  color: var(--ac);
+}
+
+/* Technology tags */
+
+.experience-tech {
+  margin-top: 28px;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-tags span {
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--mut);
+  font-size: 13px;
+}
+
+/* Bottom CTA */
+
+.experience-footer {
+  text-align: center;
+  padding: 56px 0 32px;
+}
+
+.experience-footer p {
+  color: var(--mut);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .experience-timeline {
+    padding-left: 22px;
+  }
+
+  .experience-dot {
+    left: -29px;
+  }
+
+  .experience-heading {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .experience-content {
+    padding: 0 20px 20px;
+  }
+
+  .experience-intro {
+    margin-bottom: 40px;
+  }
+}
