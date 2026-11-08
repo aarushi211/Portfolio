@@ -8,44 +8,59 @@ export const impactlink: Project = {
     demoLength: "2:37",
 
     desc:
-        "Multi-agent system for grant matching and proposal generation for nonprofits.",
+        "Multi-agent platform for nonprofit grant discovery, proposal generation, funder-specific revisions, and budgeting.",
 
-    tags: ["Multi-agent", "RAG", "Full stack"],
+    tags: [
+        "Multi-Agent",
+        "LangGraph",
+        "Hybrid Retrieval",
+        "Full Stack",
+    ],
+
     cats: ["LLM & Agents", "RAG"],
 
     github:
         "https://github.com/aarushi211/ImpactLink",
+
     live:
         "https://impactlink-cbfc5.web.app/",
 
-    // Add your YouTube URL once uploaded
-    demoVideo: "https://youtu.be/sJPHl2RzuEE?si=arjfHAnZIsXi8Pkl",
+    demoVideo:
+        "https://youtu.be/sJPHl2RzuEE",
 
     overview:
-        "ImpactLink helps nonprofits discover relevant funding opportunities and prepare grant proposals. It combines retrieval, grant matching, AI-assisted proposal generation, and human review.",
+        "ImpactLink is an AI-powered grant preparation platform that helps nonprofits move from an initial project idea toward a grant application. It combines grant discovery, guided multi-agent proposal drafting, funder-specific gap analysis, targeted revisions, and budget preparation. Human review is integrated throughout the workflow, allowing users to refine and approve AI-generated content.",
 
     arch: [
         [
-            "Grant discovery",
-            "Search funding opportunities using keyword and semantic retrieval.",
+            "Grant discovery & ranking",
+            "Retrieve funding opportunities using semantic search with PostgreSQL pgvector, followed by AI-based relevance reranking and eligibility checks.",
         ],
         [
-            "Ranking",
-            "Combine retrieval signals and refine grant relevance.",
+            "Multi-agent proposal generation",
+            "Orchestrate guided information collection, section-by-section drafting, evaluation, and revision using LangGraph workflows.",
         ],
         [
-            "Proposal generation",
-            "Generate proposal sections using an AI-assisted workflow.",
+            "Funder-specific improvements",
+            "Analyze uploaded proposals against grant requirements, identify gaps, and generate targeted revisions with side-by-side comparisons.",
         ],
         [
-            "Human review",
-            "Review, revise, and export proposal drafts.",
+            "Budget preparation",
+            "Translate user-provided cost assumptions into structured budgets using deterministic Python calculations, with AI-assisted adjustments.",
+        ],
+        [
+            "Human review & consistency",
+            "Support proposal editing, consistency checks, review checkpoints, saved drafts, and PDF export.",
+        ],
+        [
+            "Full-stack application",
+            "Connect a React frontend to FastAPI services, with PostgreSQL for persistent workflows and Firebase for authentication and file storage.",
         ],
     ],
 
     results:
-        "Won first place at the USC × Techstars Startup Weekend. The prototype can generate multi-section proposal drafts in minutes.",
+        "Won the Social category at Trojan Hacks. Independently expanded the original hackathon project into a full-stack prototype supporting grant discovery, proposal development, funder-specific revisions, and budget preparation.",
 
     learnings:
-        "Explored the trade-offs between retrieval relevance, ranking, automated drafting, and keeping users involved in the review process.",
+        "Explored multi-agent orchestration, retrieval and ranking quality, stateful workflows, and human-in-the-loop review. Designed deterministic budget calculations alongside AI-assisted drafting, balancing automation with user control, consistency, and traceability.",
 };
