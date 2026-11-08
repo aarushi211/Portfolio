@@ -1498,3 +1498,62 @@ dialog::backdrop {
     stroke-dashoffset: 0;
   }
 }
+
+/* ===== WRITING PAGE ===== */
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 340px));
+  gap: 24px;
+  justify-content: start;
+}
+
+.article-card {
+  overflow: hidden;
+  padding: 0;
+  min-width: 0;
+}
+
+.article-image-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.article-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.article-image-link:hover .article-image {
+  transform: scale(1.04);
+}
+
+.article-content {
+  padding: 20px;
+}
+
+.article-content h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.article-content h3 a {
+  color: var(--tx);
+  text-decoration: none;
+}
+
+.article-content h3 a:hover {
+  color: var(--cy);
+}
+
+.article-content p {
+  font-size: 13px;
+  color: var(--mut);
+  margin: 0;
+}
