@@ -1,9 +1,9 @@
 // ===== EDIT THIS FILE: all your content lives here =====
 export const SITE = {
-  name: "Aarushi",
-  email: "you@example.com",
-  github: "", linkedin: "", youtube: "", resume: "",
-  photo: "", // e.g. "/photo.jpg" (file in the /public folder)
+  name: "Aarushi Jain",
+  email: "aarushij.dev@gmail.com",
+  github: "https://github.com/aarushi211", linkedin: "https://www.linkedin.com/in/aarushi-jain-01413a207/", youtube: "", resume: "",
+  photo: "images/AarushiPhoto.jpeg",
   location: "Seattle, WA",
 };
 
@@ -159,8 +159,8 @@ export const experience = [
 
 
 export const articles = [
-  { title: "Testing Scheduling Agents: Hidden Failures After Unit Testing", meta: "Oct 2026 · Engineering", href: "#" },
-  { title: "Can Models Answer Without the Question?", meta: "Sep 2026 · LLM evaluation", href: "#" },
+  // { title: "Testing Scheduling Agents: Hidden Failures After Unit Testing", meta: "Oct 2026 · Engineering", href: "#" },
+  { title: "Can Models Answer Without the Question?", meta: "Sep 2026 · LLM evaluation", href: "https://aarushijain750597.substack.com/p/how-much-of-an-mmlu-score-comes-from?r=90nqwv&utm_campaign=post&utm_medium=web" },
 ];
 
 export const interests = [

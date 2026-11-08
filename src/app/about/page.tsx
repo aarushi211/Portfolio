@@ -1,17 +1,189 @@
+
 import Photo from "@/components/Photo";
-import Beyond from "@/components/Beyond";
 import { SITE } from "@/data/site";
-export const metadata = { title: "About" };
+
+export const metadata = {
+  title: "About",
+  description:
+    "A little about my journey into AI, my interests, and life beyond code.",
+};
+
+const journey = [
+  {
+    step: "01",
+    icon: "🐢",
+    title: "Turtle Graphics",
+    subtitle: "Where it began",
+    description:
+      "My first experience with programming was making a little turtle draw shapes on screen.",
+  },
+  {
+    step: "02",
+    icon: "🧠",
+    title: "Machine Learning",
+    subtitle: "The fascination",
+    description:
+      "I discovered how mathematics and data could help computers learn patterns and make predictions.",
+  },
+  {
+    step: "03",
+    icon: "💬",
+    title: "NLP & LLMs",
+    subtitle: "The curiosity continues",
+    description:
+      "My love for languages and curiosity about ChatGPT drew me toward NLP and language models.",
+  },
+];
+
+const sports = [
+  { icon: "🏊", title: "Swimming", detail: "Selected for states" },
+  { icon: "🎾", title: "Tennis", detail: "Competitive player" },
+  { icon: "🏀", title: "Basketball", detail: "Class team captain" },
+];
+
+const stories = [
+  { title: "Attack on Titan", type: "Anime", icon: "⚔️" },
+  { title: "Ascendance of a Bookworm", type: "Light novel", icon: "📖" },
+  { title: "The Apothecary Diaries", type: "Anime & novel", icon: "🌿" },
+  { title: "Naruto", type: "Anime", icon: "🍥" },
+  { title: "Haikyu!!", type: "Anime", icon: "🏐" },
+  { title: "MXTX novels", type: "Novels", icon: "🌸" },
+];
+
+const hobbies = [
+  { icon: "🧶", title: "Crochet" },
+  { icon: "🪡", title: "Embroidery" },
+  { icon: "🧵", title: "Knitting" },
+  { icon: "✏️", title: "Sketching" },
+  { icon: "🎨", title: "Painting" },
+];
+
 export default function About() {
   return (
-    <div className="wrap"><div className="pg cols">
-      <div>
-        <h2 className="t" style={{ marginBottom: 16 }}>About me</h2>
-        <p>I’m {SITE.name}, a computer science graduate from USC, interested in building reliable and useful AI systems. I enjoy working across the stack — from model applications and agentic workflows to evaluation and real-world testing.</p>
-        <p>📍 {SITE.location} · 🎓 MS in CS, USC · 💼 Open to new grad and early-career roles</p>
-        <div style={{ marginTop: 28 }}><Beyond plain /></div>
+    <main className="wrap">
+      <div className="pg visual-about">
+
+        {/* Hero */}
+        <section className="va-hero">
+          <div className="va-hero-copy">
+            <span className="va-eyebrow">
+              BEYOND THE RESUME
+            </span>
+
+            <h1 className="t">A little about me.</h1>
+
+            <p className="va-hello">
+              Hi, I'm {SITE.name}! 👋
+            </p>
+
+            <p className="va-intro">
+              CS graduate from USC, fascinated by AI,
+              language, and how things work. I enjoy
+              building things, questioning assumptions,
+              and exploring new ideas.
+            </p>
+
+            <div className="va-meta">
+              <span>📍 {SITE.location}</span>
+              <span>🎓 MS in Computer Science</span>
+            </div>
+          </div>
+
+          <div className="va-photo">
+            <Photo
+              style={{
+                width: "100%",
+                maxWidth: 310,
+                height: 350,
+              }}
+            />
+          </div>
+        </section>
+
+        {/* Journey */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">MY JOURNEY</span>
+            <h2>From a little turtle to AI.</h2>
+            <p>Three things that sparked my curiosity.</p>
+          </div>
+
+          <div className="va-journey">
+            {journey.map((item) => (
+              <article className="va-journey-card" key={item.step}>
+                <span className="va-step">{item.step}</span>
+                <div className="va-journey-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <span className="va-subtitle">{item.subtitle}</span>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+
+        </section>
+
+        {/* Sports */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">BEYOND THE CODE</span>
+            <h2>I'd rather play than watch.</h2>
+            <p>Sports have always been part of my life.</p>
+          </div>
+
+          <div className="va-sports">
+            {sports.map((sport) => (
+              <div className="va-sport" key={sport.title}>
+                <span className="va-sport-icon">{sport.icon}</span>
+                <strong>{sport.title}</strong>
+                <small>{sport.detail}</small>
+              </div>
+            ))}
+          </div>
+
+          <p className="va-small-note">
+            Also always up for badminton, volleyball,
+            cricket, soccer, or trying something new.
+          </p>
+        </section>
+
+        {/* Stories */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">FICTIONAL WORLDS</span>
+            <h2>Usually lost in a story.</h2>
+            <p>Some anime and novels I keep coming back to.</p>
+          </div>
+
+          <div className="va-story-grid">
+            {stories.map((story) => (
+              <div className="va-story" key={story.title}>
+                <span className="va-story-icon">{story.icon}</span>
+                <strong>{story.title}</strong>
+                <small>{story.type}</small>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Creative hobbies */}
+        <section className="va-section va-last">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">ALWAYS EXPERIMENTING</span>
+            <h2>A little bit of everything.</h2>
+            <p>My creative side likes exploring new hobbies.</p>
+          </div>
+
+          <div className="va-hobbies">
+            {hobbies.map((hobby) => (
+              <div className="va-hobby" key={hobby.title}>
+                <span>{hobby.icon}</span>
+                <strong>{hobby.title}</strong>
+              </div>
+            ))}
+          </div>
+        </section>
+
       </div>
-      <Photo style={{ width: "100%", maxWidth: 300, height: 340 }} />
-    </div></div>
+    </main>
   );
 }

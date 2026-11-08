@@ -893,3 +893,608 @@ dialog::backdrop {
     margin-bottom: 40px;
   }
 }
+
+/* ===== ABOUT PAGE ===== */
+
+.about-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.about-page section {
+  padding: 0;
+}
+
+.about-eyebrow {
+  display: block;
+  color: var(--cy);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+}
+
+/* Hero */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
+  align-items: center;
+  gap: 64px;
+  padding-bottom: 72px !important;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-intro h1 {
+  font-size: clamp(42px, 6vw, 64px);
+  margin-bottom: 28px;
+}
+
+.about-intro p {
+  color: var(--mut);
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.about-intro .about-lead {
+  color: var(--tx);
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.about-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.about-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.about-facts span {
+  font-size: 13px;
+  color: var(--mut);
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* Content sections */
+
+.about-section {
+  padding: 68px 0 !important;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-section h2,
+.about-closing h2 {
+  font-family: var(--ser);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.about-prose {
+  max-width: 720px;
+}
+
+.about-prose p,
+.about-section-lead {
+  color: var(--mut);
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 18px;
+}
+
+.about-thinking {
+  max-width: 100%;
+}
+
+/* Interests */
+
+.about-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.about-interest-card {
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.about-interest-icon {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-interest-card h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.about-interest-card p {
+  color: var(--mut);
+  font-size: 14px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.about-sports-note {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-left: 2px solid var(--ac);
+  background: color-mix(in srgb, var(--pu) 5%, transparent);
+  color: var(--mut);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.about-sports-note strong {
+  color: var(--tx);
+}
+
+/* Favorites */
+
+.about-favorites > p {
+  color: var(--mut);
+  margin-bottom: 24px;
+}
+
+.about-favorite-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-favorite-list span {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--mut);
+  font-size: 14px;
+}
+
+/* Closing */
+
+.about-closing {
+  padding: 72px 0 56px !important;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.about-closing p {
+  color: var(--mut);
+  line-height: 1.85;
+  margin: 0 auto 18px;
+}
+
+.about-closing .btn {
+  margin-top: 24px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-photo {
+    justify-content: flex-start;
+  }
+
+  .about-interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    padding: 48px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro h1 {
+    font-size: 42px;
+  }
+
+  .about-interest-card {
+    padding: 20px;
+  }
+
+  .about-hero {
+    padding-bottom: 48px !important;
+  }
+}
+
+/* ===== VISUAL ABOUT ===== */
+
+.visual-about {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.va-eyebrow {
+  color: var(--cy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.va-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.va-hero h1 {
+  margin: 16px 0 22px;
+  font-size: clamp(40px, 5vw, 62px);
+}
+
+.va-hello {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.va-intro {
+  color: var(--mut);
+  line-height: 1.85;
+  max-width: 530px;
+}
+
+.va-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.va-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.va-meta span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--mut);
+  font-size: 12px;
+}
+
+/* Sections */
+
+.va-section {
+  padding: 62px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.va-last {
+  border-bottom: 0;
+}
+
+.va-section-heading {
+  margin-bottom: 28px;
+}
+
+.va-section-heading h2 {
+  font-family: var(--ser);
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.va-section-heading p {
+  color: var(--mut);
+  font-size: 14px;
+}
+
+/* Journey */
+
+.va-journey {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.va-journey-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surf);
+}
+
+.va-step {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--mut);
+  font-size: 12px;
+}
+
+.va-journey-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.va-journey-card h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.va-subtitle {
+  color: var(--cy);
+  font-size: 12px;
+}
+
+.va-journey-card p {
+  color: var(--mut);
+  font-size: 13px;
+  line-height: 1.75;
+  margin-top: 14px;
+}
+
+/* Turtle demo */
+
+.turtle-demo {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surf);
+}
+
+.turtle-demo-top {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.turtle-demo-top strong {
+  font-size: 14px;
+}
+
+.turtle-demo-top p {
+  font-size: 12px;
+  color: var(--mut);
+  margin-top: 5px;
+}
+
+.turtle-run {
+  background: var(--ac);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.turtle-demo-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.turtle-code {
+  border-right: 1px solid var(--line);
+  min-width: 0;
+}
+
+.turtle-code-header {
+  color: var(--mut);
+  font-size: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.turtle-code pre {
+  margin: 0;
+  padding: 26px 20px;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-x: auto;
+}
+
+.turtle-canvas {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  color: var(--cy);
+}
+
+.turtle-canvas svg {
+  width: 100%;
+  max-width: 260px;
+}
+
+.turtle-path {
+  animation: turtle-draw 4s linear forwards;
+}
+
+.turtle-marker {
+  offset-path: path("M70 45 H170 V145 H70 V45");
+  offset-distance: 0%;
+  animation: turtle-move 4s linear forwards;
+}
+
+@keyframes turtle-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes turtle-move {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* Sports */
+
+.va-sports {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.va-sport {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  padding: 28px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surf);
+}
+
+.va-sport-icon {
+  font-size: 36px;
+}
+
+.va-sport strong {
+  font-size: 16px;
+}
+
+.va-sport small {
+  color: var(--mut);
+}
+
+.va-small-note {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--mut);
+  font-size: 13px;
+}
+
+/* Stories */
+
+.va-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.va-story {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.va-story-icon {
+  font-size: 28px;
+}
+
+.va-story strong {
+  font-size: 14px;
+}
+
+.va-story small {
+  color: var(--mut);
+}
+
+/* Creative hobbies */
+
+.va-hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.va-hobby {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--surf);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.va-hobby span {
+  font-size: 24px;
+}
+
+.va-hobby strong {
+  font-size: 13px;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .va-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .va-photo {
+    justify-content: flex-start;
+  }
+
+  .va-journey,
+  .va-sports,
+  .va-story-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .turtle-demo-body {
+    grid-template-columns: 1fr;
+  }
+
+  .turtle-code {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 480px) {
+  .va-journey,
+  .va-sports,
+  .va-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .va-section {
+    padding: 44px 0;
+  }
+
+  .turtle-demo-top {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turtle-path,
+  .turtle-marker {
+    animation: none;
+  }
+
+  .turtle-path {
+    stroke-dashoffset: 0;
+  }
+}
