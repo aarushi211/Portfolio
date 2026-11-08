@@ -1,15 +1,25 @@
-"use client";
-import { useState } from "react";
 import { toolkit } from "@/data/site";
 
 export default function Toolkit() {
-  const keys = Object.keys(toolkit);
-  const [k, setK] = useState(keys[0]);
   return (
-    <>
-      <div className="tabs" role="tablist">{keys.map((x) => <button key={x} role="tab" aria-selected={x === k} onClick={() => setK(x)}>{x}</button>)}</div>
-      <div className="tools">{toolkit[k].map(([n]) => <span key={n}>{n}</span>)}</div>
-      <p className="used">Used in: {toolkit[k].map(([n, u]) => `${n} (${u})`).join(", ")}</p>
-    </>
+    <div className="toolkit-grid">
+      {Object.entries(toolkit).map(([category, skills]) => (
+        <div className="toolkit-card" key={category}>
+          <h3>{category}</h3>
+
+          <div className="toolkit-skills">
+            {skills.map(([name, description]) => (
+              <span
+                key={name}
+                className="toolkit-skill"
+                title={description}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

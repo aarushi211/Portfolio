@@ -7,36 +7,218 @@ import FocusAreas from "@/components/FocusAreas";
 import { SITE, projects } from "@/data/site";
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured).sort((a) => (a.slug === "clauselens" ? -1 : 1));
+  const featured = projects
+    .filter((p) => p.featured)
+    .sort((a, b) => {
+      if (a.slug === "clauselens") return -1;
+      if (b.slug === "clauselens") return 1;
+      return 0;
+    });
+
   return (
-    <div className="wrap">
-      <div className="hero">
-        <div>
-          <h1>Hi, I’m {SITE.name}.</h1>
-          <h2>I build AI systems that work beyond the demo.</h2>
-          <p>MS in Computer Science from USC. I design, build, test, and deploy AI systems — from LLM applications and agents to retrieval, evaluation, and scalable backend engineering.</p>
-          <div className="cta"><Link className="btn pri" href="/projects">View projects</Link><a className="tlink" href={`mailto:${SITE.email}`}>Get in touch</a></div>
-          <div className="social"><a href={SITE.github || "#"}>GitHub</a><a href={SITE.linkedin || "#"}>LinkedIn</a><a href={SITE.youtube || "#"}>YouTube</a><span>{SITE.location}</span></div>
+    <div className="wrap home-page">
+
+      {/* HERO */}
+      <section className="home-hero">
+        <div className="home-hero-content">
+          <span className="home-eyebrow">
+            AI ENGINEERING · SOFTWARE ENGINEERING
+          </span>
+
+          <h1>
+            Hi, I'm <span>{SITE.name}.</span>
+          </h1>
+
+          <h2>
+            From ideas to
+            <em> working AI systems</em>
+          </h2>
+
+          <p className="home-hero-description">
+            MS in Computer Science from USC. I design,
+            build, test, and deploy AI systems — from
+            LLM applications and agents to retrieval,
+            evaluation, and backend engineering.
+          </p>
+
+          <div className="home-hero-actions">
+            <Link className="btn pri" href="/projects">
+              Explore my work ↗
+            </Link>
+
+            <a
+              className="btn"
+              href={`mailto:${SITE.email}`}
+            >
+              Get in touch
+            </a>
+          </div>
+
+          <div className="home-hero-social">
+            {SITE.github && (
+              <a
+                href={SITE.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+            )}
+
+            {SITE.linkedin && (
+              <a
+                href={SITE.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+            )}
+
+            {SITE.youtube && (
+              <a
+                href={SITE.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                YouTube ↗
+              </a>
+            )}
+
+            {SITE.location && (
+              <span>{SITE.location}</span>
+            )}
+          </div>
         </div>
-        <Photo />
-      </div>
-      <section style={{ paddingTop: 8, paddingBottom: 24 }}>
-        <h3 style={{ fontSize: 22, marginBottom: 20 }}>What I work on</h3>
+
+        <div className="home-hero-photo">
+          <Photo />
+        </div>
+      </section>
+
+      {/* SELECTED WORK */}
+      {featured.length > 0 && (
+        <section className="home-section home-featured">
+          <div className="home-section-heading">
+            <div>
+              <span className="home-eyebrow">
+                FEATURED PROJECTS
+              </span>
+              <h2>Selected work</h2>
+              <p>
+                A closer look at the systems I've built,
+                the problems they solve, and the engineering behind them.
+              </p>
+            </div>
+
+            <Link href="/projects" className="home-section-link">
+              All projects →
+            </Link>
+          </div>
+
+          <div className="projects-gallery-grid">
+            {featured.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FOCUS AREAS */}
+      <section className="home-section">
+        <div className="home-section-heading">
+          <div>
+            <span className="home-eyebrow">
+              WHAT I DO
+            </span>
+            <h2>What I work on</h2>
+            <p>
+              I enjoy working across the AI development lifecycle,
+              building applications, experimenting with models,
+              evaluating their behavior, and understanding the
+              systems that support them.
+            </p>
+          </div>
+        </div>
+
         <FocusAreas />
       </section>
-      <section>
-        <div className="row"><h2 className="t">Selected work</h2><Link href="/projects">All projects</Link></div>
-        <div className="grid">{featured.map((p, i) => <ProjectCard key={p.slug} project={p} />)}</div>
+
+      {/* ABOUT */}
+      <section className="home-section home-about">
+        <div className="home-about-content">
+          <span className="home-eyebrow">
+            BEYOND THE CODE
+          </span>
+
+          <h2>
+            Curious by nature, even away from the keyboard.
+          </h2>
+
+          <p>
+            Outside of coding, I enjoy getting lost in a good
+            book, going on long walks, and watching anime.
+          </p>
+
+          <p>
+            I love stories that introduce different perspectives,
+            explore complex characters, or simply leave me with
+            something to think about.
+          </p>
+
+          <Link href="/about" className="home-section-link">
+            More about me →
+          </Link>
+        </div>
+
+        <div className="home-about-visual">
+          <Beyond />
+        </div>
       </section>
-      <section className="about">
-        <div><h2 className="t">A builder, explorer, and team player.</h2>
-          <p>I love turning ideas into real systems, understanding how they work, and making them reliable in practice. Outside of code, you’ll find me in the pool, on a tennis court, or cheering on a team sport.</p>
-          <Link href="/about" className="tlink">More about me</Link></div>
-        <Beyond />
+
+      {/* TOOLKIT */}
+      <section className="home-section home-toolkit">
+        <div className="home-section-heading">
+          <div>
+            <span className="home-eyebrow">
+              TECHNOLOGIES
+            </span>
+            <h2>Toolkit</h2>
+            <p>
+              Tools and technologies I use to build,
+              experiment, and ship software.
+            </p>
+          </div>
+        </div>
+
+        <Toolkit />
       </section>
-      <section style={{ borderTop: "1px solid var(--line)", paddingTop: 40 }}>
-        <h3 style={{ fontSize: 22 }}>Toolkit</h3><Toolkit />
+
+      {/* CONTACT */}
+      <section className="home-contact">
+        <span className="home-eyebrow">
+          LET'S CONNECT
+        </span>
+
+        <h2>Have something interesting in mind?</h2>
+
+        <p>
+          I'm always interested in discussing AI systems,
+          software engineering, and opportunities to
+          build useful products.
+        </p>
+
+        <a
+          href={`mailto:${SITE.email}`}
+          className="btn pri"
+        >
+          Get in touch ↗
+        </a>
       </section>
+
     </div>
   );
 }

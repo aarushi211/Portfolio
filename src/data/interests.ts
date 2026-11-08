@@ -1,5 +1,14 @@
 export const interests = [
-    ["Competitive swimming", "Discipline, resilience, and a love for the water."],
-    ["Tennis", "A great way to stay active and clear my mind."],
-    ["Team sports", "I enjoy the teamwork, strategy, and energy of playing together."],
+    [
+        "Reading",
+        "I enjoy getting lost in books, discovering new perspectives, and exploring different ideas through stories.",
+    ],
+    [
+        "Walking",
+        "Long walks are my favorite way to unwind, clear my head, and take a break from screens.",
+    ],
+    [
+        "Anime",
+        "I love character-driven stories, intricate world-building, and the themes that anime explores.",
+    ],
 ];
