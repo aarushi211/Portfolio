@@ -1,11 +1,31 @@
-import ProjectList from "@/components/ProjectList";
-export const metadata = { title: "Projects" };
-export default function Projects() {
+
+import { projects } from "@/data/site";
+import ProjectCard from "@/components/ProjectCard";
+
+export default function ProjectsPage() {
   return (
-    <div className="wrap"><div className="pg">
-      <h2 className="t">Projects</h2>
-      <p>A collection of AI and software systems I’ve built, from prototypes to deployable applications.</p>
-      <ProjectList />
-    </div></div>
+    <main className="wrap projects-gallery-page">
+      <div className="projects-gallery-header">
+        <span className="project-case-eyebrow">
+          SELECTED WORK
+        </span>
+
+        <h1>Projects</h1>
+
+        <p>
+          AI systems, developer tools, and applied machine
+          learning — from prototypes to deployed applications.
+        </p>
+      </div>
+
+      <div className="projects-gallery-grid">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.slug}
+            project={project}
+          />
+        ))}
+      </div>
+    </main>
   );
 }

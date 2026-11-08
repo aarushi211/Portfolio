@@ -28,6 +28,9 @@ export const clauselens: Project = {
     demoVideo:
         "https://youtu.be/eazhCX62HJ8",
 
+    thumbnail:
+        "/images/clauselens-scale.svg",
+
     overview:
         "ClauseLens helps users understand complex Terms of Service agreements through clause analysis and document-grounded Q&A. It retrieves relevant passages, generates answers with inspectable source references, and abstains when sufficient supporting evidence is unavailable. The application uses a fine-tuned, quantized 7B language model designed to support CPU-only inference.",
 

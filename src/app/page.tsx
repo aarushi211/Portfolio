@@ -26,7 +26,7 @@ export default function Home() {
       </section>
       <section>
         <div className="row"><h2 className="t">Selected work</h2><Link href="/projects">All projects</Link></div>
-        <div className="grid">{featured.map((p, i) => <ProjectCard key={p.slug} p={p} large={i === 0} />)}</div>
+        <div className="grid">{featured.map((p, i) => <ProjectCard key={p.slug} project={p} />)}</div>
       </section>
       <section className="about">
         <div><h2 className="t">A builder, explorer, and team player.</h2>

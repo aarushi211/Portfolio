@@ -9,19 +9,33 @@ export type Project = {
     tags: string[];
     cats: string[];
 
-    // Links
     github?: string;
     live?: string;
     demoVideo?: string;
     overviewVideo?: string;
 
-    // Case study
+    // Project story
     overview?: string;
+    problem?: string;
+    contribution?: string;
+
+    // Architecture
     arch?: [string, string][];
+    architectureImage?: string;
+
+    // Engineering details
+    decisions?: {
+        title: string;
+        rationale: string;
+        tradeoff?: string;
+    }[];
+
     results?: string;
+    validation?: string;
+    limitations?: string;
     learnings?: string;
 
-    // Optional additions for richer pages
+    // Existing optional data
     challenges?: {
         title: string;
         description: string;

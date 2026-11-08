@@ -11,56 +11,92 @@ export const impactlink: Project = {
         "Multi-agent platform for nonprofit grant discovery, proposal generation, funder-specific revisions, and budgeting.",
 
     tags: [
-        "Multi-Agent",
         "LangGraph",
-        "Hybrid Retrieval",
-        "Full Stack",
+        "Multi-Agent",
+        "pgvector",
+        "FastAPI",
+        "React",
     ],
 
     cats: ["LLM & Agents", "RAG"],
 
-    github:
-        "https://github.com/aarushi211/ImpactLink",
-
-    live:
-        "https://impactlink-cbfc5.web.app/",
-
-    demoVideo:
-        "https://youtu.be/sJPHl2RzuEE",
+    github: "https://github.com/aarushi211/ImpactLink",
+    live: "https://impactlink-cbfc5.web.app/",
+    demoVideo: "https://youtu.be/sJPHl2RzuEE",
+    thumbnail: "/images/impactlink-mark.svg",
 
     overview:
-        "ImpactLink is an AI-powered grant preparation platform that helps nonprofits move from an initial project idea toward a grant application. It combines grant discovery, guided multi-agent proposal drafting, funder-specific gap analysis, targeted revisions, and budget preparation. Human review is integrated throughout the workflow, allowing users to refine and approve AI-generated content.",
+        "ImpactLink is an AI-powered grant preparation platform that helps nonprofits move from an initial project idea toward a grant application. It combines funding opportunity discovery, guided proposal drafting, funder-specific gap analysis, targeted revisions, and structured budget preparation. Human review is integrated throughout the workflow.",
+
+    problem:
+        "Nonprofits often face a fragmented grant application process: finding relevant funding opportunities, interpreting eligibility requirements, writing detailed proposals, and preparing budgets. These tasks require significant manual research, coordination, and repeated revisions.",
+
+    contribution:
+        "Co-developed the original hackathon prototype, then independently rebuilt and expanded most of the frontend and backend. Implemented grant retrieval and ranking, stateful AI proposal workflows, funder-specific revisions, human review, and structured budget preparation.",
+
+    architectureImage:
+        "/images/projects/impactlink-architecture.png",
 
     arch: [
         [
             "Grant discovery & ranking",
-            "Retrieve funding opportunities using semantic search with PostgreSQL pgvector, followed by AI-based relevance reranking and eligibility checks.",
+            "Use semantic retrieval with PostgreSQL pgvector, AI reranking, and recorded eligibility checks to identify potentially relevant funding opportunities.",
         ],
         [
-            "Multi-agent proposal generation",
-            "Orchestrate guided information collection, section-by-section drafting, evaluation, and revision using LangGraph workflows.",
+            "Multi-agent proposal workflows",
+            "Orchestrate guided information collection, section-by-section drafting, evaluation, and revision through LangGraph workflows.",
         ],
         [
             "Funder-specific improvements",
-            "Analyze uploaded proposals against grant requirements, identify gaps, and generate targeted revisions with side-by-side comparisons.",
+            "Analyze uploaded proposals against funder requirements, identify gaps, and generate targeted revisions with tracked comparisons.",
         ],
         [
             "Budget preparation",
-            "Translate user-provided cost assumptions into structured budgets using deterministic Python calculations, with AI-assisted adjustments.",
+            "Calculate staffing, direct costs, indirect costs, and budget constraints using structured inputs and deterministic Python arithmetic.",
         ],
         [
             "Human review & consistency",
-            "Support proposal editing, consistency checks, review checkpoints, saved drafts, and PDF export.",
+            "Provide review checkpoints, editable drafts, consistency checks, persistent sessions, and PDF export.",
         ],
         [
-            "Full-stack application",
-            "Connect a React frontend to FastAPI services, with PostgreSQL for persistent workflows and Firebase for authentication and file storage.",
+            "Full-stack infrastructure",
+            "Connect a React frontend to FastAPI services, with Neon PostgreSQL for grant data and workflow persistence and Firebase for authentication and file storage.",
         ],
+    ],
+
+    decisions: [
+        {
+            title: "Stateful workflows with human review",
+            rationale:
+                "Used LangGraph to coordinate multi-step proposal drafting and revision while preserving session state and allowing users to inspect and revise generated content.",
+            tradeoff:
+                "Stateful workflows introduce complexity around checkpoints, session recovery, and keeping user edits synchronized with AI-generated content.",
+        },
+        {
+            title: "Semantic retrieval with AI reranking",
+            rationale:
+                "Used embedding-based retrieval with PostgreSQL pgvector to identify relevant grants, followed by AI reranking and eligibility checks to refine the results.",
+            tradeoff:
+                "Semantic relevance does not guarantee eligibility. Missing, outdated, or funder-specific requirements still require verification.",
+        },
+        {
+            title: "Deterministic budget calculations",
+            rationale:
+                "Separated AI-assisted interpretation and drafting from financial arithmetic. Python calculates budgets using explicit cost assumptions, making calculations reproducible.",
+            tradeoff:
+                "The application requires structured financial inputs and additional validation rather than relying on free-form AI-generated estimates.",
+        },
     ],
 
     results:
         "Won the Social category at Trojan Hacks. Independently expanded the original hackathon project into a full-stack prototype supporting grant discovery, proposal development, funder-specific revisions, and budget preparation.",
 
+    validation:
+        "The repository documents 144 passing backend tests, 63 passing frontend tests, and a successful frontend production build as of November 5, 2026. Earlier retrieval and drafting evaluations used a small set of synthetic scenarios and are not production-quality benchmarks.",
+
+    limitations:
+        "ImpactLink is a prototype, not a submission-ready grant application service. Eligibility checks cover only recorded requirements, AI-generated proposals require human verification, and database-level tenant isolation and broader real-world evaluation remain future improvements.",
+
     learnings:
-        "Explored multi-agent orchestration, retrieval and ranking quality, stateful workflows, and human-in-the-loop review. Designed deterministic budget calculations alongside AI-assisted drafting, balancing automation with user control, consistency, and traceability.",
+        "Explored multi-agent orchestration, retrieval and ranking quality, stateful workflows, and human-in-the-loop design. Learned to separate probabilistic AI tasks from deterministic financial calculations while balancing automation, traceability, and user control.",
 };
