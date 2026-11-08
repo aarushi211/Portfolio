@@ -1557,3 +1557,77 @@ dialog::backdrop {
   color: var(--mut);
   margin: 0;
 }
+
+/* ===== PROJECT DETAIL PAGES ===== */
+
+.project-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-detail-hero {
+  margin: 32px 0 44px;
+}
+
+.project-detail-eyebrow {
+  display: block;
+  color: var(--cy);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+}
+
+.project-detail-hero h1 {
+  margin-bottom: 18px;
+}
+
+.project-detail-hero > p {
+  max-width: 720px;
+  color: var(--mut);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.project-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.project-detail-media {
+  margin-bottom: 42px;
+}
+
+.project-detail-section {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-detail-section h2 {
+  font-family: var(--ser);
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.project-detail-section > p {
+  max-width: 760px;
+  color: var(--mut);
+  line-height: 1.85;
+}
+
+.project-detail-footer {
+  padding: 32px 0 20px;
+  border-top: 1px solid var(--line);
+}
+
+.project-detail-footer a {
+  color: var(--cy);
+  text-decoration: none;
+}
+
+.project-detail-footer a:hover {
+  text-decoration: underline;
+}
