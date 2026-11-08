@@ -2,17 +2,57 @@
 import { useState } from "react";
 import Video from "./Video";
 
-export function VideoTabs({ demo, overview }: { demo?: string; overview?: string }) {
-  const [t, setT] = useState<"Product demo" | "Technical overview">("Product demo");
+
+export function VideoTabs({
+  demo,
+  overview,
+}: {
+  demo?: string;
+  overview?: string;
+}) {
+  const [t, setT] = useState<
+    "Product demo" | "Technical overview"
+  >("Product demo");
+
+  const active =
+    t === "Technical overview" && overview
+      ? overview
+      : demo || overview;
+
   return (
     <>
-      <div className="vids">
-        {(["Product demo", "Technical overview"] as const).map((x) => <button key={x} className={x === t ? "btn pri" : "btn"} onClick={() => setT(x)}>{x}</button>)}
-      </div>
-      <Video url={t === "Product demo" ? demo : overview} label={t} />
+      {demo && overview && (
+        <div className="vids">
+          <button
+            className={t === "Product demo" ? "btn pri" : "btn"}
+            onClick={() => setT("Product demo")}
+          >
+            Product demo
+          </button>
+
+          <button
+            className={
+              t === "Technical overview" ? "btn pri" : "btn"
+            }
+            onClick={() => setT("Technical overview")}
+          >
+            Technical overview
+          </button>
+        </div>
+      )}
+
+      <Video
+        url={active}
+        label={
+          !demo
+            ? "Technical overview"
+            : t
+        }
+      />
     </>
   );
 }
+
 
 export function Arch({ items }: { items: [string, string][] }) {
   const [i, setI] = useState(0);

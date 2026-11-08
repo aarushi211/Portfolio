@@ -11,18 +11,18 @@ import { clauselens } from "./clauselens";
 export type { Project } from "./types";
 
 export const projects: Project[] = [
-  impactlink,
-  clauselens,
-//   safeGamesLA,
-//   evaluationLab,
-//   codeSummarization,
-//   multiAgentDebate,
+    impactlink,
+    clauselens,
+    //   safeGamesLA,
+    //   evaluationLab,
+    //   codeSummarization,
+    //   multiAgentDebate,
 ];
 
 export const categories = [
-  "All",
-  "LLM & Agents",
-  "RAG",
-  "Evaluation",
-  "Systems",
+    "All",
+    "LLM & Agents",
+    "RAG",
+    "Evaluation",
+    "Systems",
 ];

@@ -4,62 +4,51 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/site";
 import { VideoTabs, Arch } from "@/components/Interactive";
 
-type ProjectPageProps = {
+type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return projects.map((p) => ({
-    slug: p.slug,
-  }));
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const p = projects.find((item) => item.slug === slug);
 
   return {
-    title: project?.name ?? "Project Not Found",
-    description: project?.desc ?? "",
+    title: p?.name ?? "Project",
+    description: p?.desc ?? "",
   };
 }
 
-export default async function ProjectPage({
-  params,
-}: ProjectPageProps) {
+export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
-  const p = projects.find((project) => project.slug === slug);
+  const p = projects.find((item) => item.slug === slug);
 
-  if (!p) {
-    notFound();
-  }
+  if (!p) notFound();
+
+  const hasDetails = Boolean(p.overview || p.arch?.length);
 
   return (
-    <main className="wrap">
-      <div className="pg project-detail">
+    <div className="wrap">
+      <main className="project-case">
 
-        <Link className="back" href="/projects">
+        <Link href="/projects" className="project-back">
           ← All projects
         </Link>
 
-        {/* Project introduction */}
-        <header className="project-detail-hero">
-          <span className="project-detail-eyebrow">
-            PROJECT CASE STUDY
-          </span>
-
-          <h1 className="t">{p.name}</h1>
+        <header className="project-case-header">
+          <h1>{p.name}</h1>
           <p>{p.desc}</p>
 
-          <div className="tags" style={{ marginTop: 20 }}>
+          <div className="tags">
             {p.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
 
-          <div className="project-detail-links">
+          <div className="project-case-actions">
             {p.github && (
               <a
                 className="btn"
@@ -78,71 +67,62 @@ export default async function ProjectPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Try Live App ↗
+                Live App ↗
               </a>
             )}
           </div>
         </header>
 
-        {/* Videos */}
         {(p.demoVideo || p.overviewVideo) && (
-          <section className="project-detail-media">
+          <div className="project-case-video">
             <VideoTabs
               demo={p.demoVideo}
               overview={p.overviewVideo}
             />
-          </section>
-        )}
-
-        {/* Overview */}
-        {p.overview && (
-          <section className="sec project-detail-section">
-            <h2>Overview</h2>
-            <p>{p.overview}</p>
-          </section>
-        )}
-
-        {/* Architecture */}
-        {p.arch && p.arch.length > 0 && (
-          <section className="sec project-detail-section">
-            <h2>How it works</h2>
-            <Arch items={p.arch} />
-          </section>
-        )}
-
-        {/* Tech stack */}
-        <section className="sec project-detail-section">
-          <h2>Tech stack</h2>
-
-          <div className="tags">
-            {p.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
           </div>
-        </section>
-
-        {/* Results */}
-        {p.results && (
-          <section className="sec project-detail-section">
-            <h2>Results & impact</h2>
-            <p>{p.results}</p>
-          </section>
         )}
 
-        {/* Learnings */}
-        {p.learnings && (
-          <section className="sec project-detail-section">
-            <h2>Learnings & limitations</h2>
-            <p>{p.learnings}</p>
-          </section>
+        {hasDetails && (
+          <div className="project-case-grid">
+            {p.overview && (
+              <section className="project-case-panel">
+                <h2>Overview</h2>
+                <p>{p.overview}</p>
+              </section>
+            )}
+
+            {p.arch && p.arch.length > 0 && (
+              <section className="project-case-panel">
+                <h2>How it works</h2>
+                <Arch items={p.arch} />
+              </section>
+            )}
+          </div>
         )}
 
-        <div className="project-detail-footer">
-          <Link href="/projects">
-            ← Back to all projects
-          </Link>
+        {(p.results || p.learnings) && (
+          <div className="project-case-grid">
+            {p.results && (
+              <section className="project-case-panel">
+                <h2>Results & impact</h2>
+                <p>{p.results}</p>
+              </section>
+            )}
+
+            {p.learnings && (
+              <section className="project-case-panel">
+                <h2>Learnings & limitations</h2>
+                <p>{p.learnings}</p>
+              </section>
+            )}
+          </div>
+        )}
+
+        <div className="project-case-bottom">
+          <Link href="/projects">← Back to projects</Link>
         </div>
-      </div>
-    </main>
+
+      </main>
+    </div>
   );
 }
