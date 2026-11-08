@@ -56,9 +56,15 @@ h1,
 h2,
 h3,
 .logo {
+  font-family: var(--sans);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+h1,
+.t {
   font-family: var(--ser);
   font-weight: 500;
-  margin: 0;
   line-height: 1.1;
 }
 a {
@@ -91,7 +97,8 @@ header .wrap {
   position: relative;
 }
 .logo {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
 }
 .logo span {
   color: var(--ac);
@@ -181,7 +188,7 @@ nav a.on {
   color: transparent;
 }
 .hero h2 {
-  font-size: clamp(24px, 3.4vw, 34px);
+  font-size: clamp(20px, 2.6vw, 28px);
   color: var(--mut);
   margin: 14px 0 24px;
   font-weight: 400;
@@ -251,7 +258,7 @@ section {
 }
 .card:hover {
   border-color: var(--pu2);
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--pu) 22%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--pu) 8%, transparent);
 }
 .card h3 a::after {
   content: "";
@@ -259,7 +266,7 @@ section {
   inset: 0;
 }
 .card h3 {
-  font-size: 24px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -286,7 +293,7 @@ section {
   margin-bottom: 16px;
   display: grid;
   place-items: center;
-  font: 500 20px var(--ser);
+  font: 500 18px var(--sans);
   color: var(--mut);
   padding: 12px;
   text-align: center;
@@ -341,7 +348,7 @@ section {
   margin: 0;
 }
 .feature h3 {
-  font-size: 34px;
+  font-size: 28px;
   align-self: end;
 }
 .feature p {
@@ -379,7 +386,7 @@ section {
   );
   display: grid;
   place-items: center;
-  font: 500 64px var(--ser);
+  font: 500 64px var(--sans);
   color: var(--mut);
 }
 .photo img {
@@ -392,7 +399,7 @@ section {
   padding-left: 32px;
 }
 .beyond h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 12px;
 }
 .beyond div {
@@ -462,7 +469,7 @@ section {
   margin: 36px 0;
 }
 .sec h3 {
-  font-size: 26px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 .sec p {
@@ -514,7 +521,7 @@ section {
   padding: 24px;
 }
 .tl h3 {
-  font-size: 22px;
+  font-size: 19px;
 }
 .tl small {
   color: var(--cy);
@@ -634,7 +641,7 @@ dialog::backdrop {
   background: transparent;
   color: var(--mut);
   cursor: pointer;
-  font: 500 20px var(--ser);
+  font: 500 16px var(--sans);
   transition: color 0.2s;
 }
 .focus button:hover,
@@ -648,7 +655,6 @@ dialog::backdrop {
   font-size: 15px;
   min-height: 3.4em;
 }
-
 .focus-cap a {
   display: block;
   margin-top: 4px;
