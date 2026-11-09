@@ -35,7 +35,7 @@ export const impactlink: Project = {
         "Co-developed the original hackathon prototype, then independently rebuilt and expanded most of the frontend and backend. Implemented grant retrieval and ranking, stateful AI proposal workflows, funder-specific revisions, human review, and structured budget preparation.",
 
     architectureImage:
-        "/images/projects/impactlink-architecture.png",
+        "/images/impactlink-architecture.png",
 
     arch: [
         [
