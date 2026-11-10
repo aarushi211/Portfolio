@@ -41,15 +41,15 @@ export const clauselens: Project = {
     highlights: [
         {
             value: "0.88",
-            label: "Mean Q&A faithfulness",
+            label: "Mean Q&A faithfulness across 15 evaluation questions",
         },
         {
             value: "Hybrid RAG",
-            label: "BM25 + dense retrieval + reranking",
+            label: "BM25 + dense retrieval + cross-encoder reranking",
         },
         {
             value: "CPU-Only",
-            label: "Quantized 7B model inference",
+            label: "Fine-tuned, quantized Qwen 2.5 7B inference",
         },
     ],
 

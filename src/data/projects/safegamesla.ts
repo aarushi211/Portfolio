@@ -41,15 +41,15 @@ export const safeGamesLA: Project = {
     highlights: [
         {
             value: "14",
-            label: "LA28 venues analyzed",
+            label: "LA28 venues covered by geospatial analytics",
         },
         {
             value: "Multi-Source",
-            label: "Geospatial & historical data integration",
+            label: "Crime, transit, weather, events, and emergency data",
         },
         {
-            value: "Verified AI",
-            label: "LLM-assisted queries with Python calculations",
+            value: "Checked Outputs",
+            label: "Gemini tool calling with deterministic Python calculations",
         },
     ],
 

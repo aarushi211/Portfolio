@@ -22,7 +22,7 @@ export const evaluationLab: Project = {
     github: "https://github.com/aarushi211/evaluation_lab",
 
     // Add your YouTube URL once the video is uploaded.
-    demoVideo: "https://youtu.be/WAHkrea-5_w?si=riWXpclqQCxkcd2B.",
+    demoVideo: "https://youtu.be/WAHkrea-5_w?si=riWXpclqQCxkcd2B",
     // demoLength: "1:55",
 
     // Add your project assets when ready.
@@ -38,17 +38,18 @@ export const evaluationLab: Project = {
     highlights: [
         {
             value: "14,042",
-            label: "MMLU questions evaluated",
+            label: "MMLU test questions across 57 subjects",
         },
         {
             value: "39.70%",
-            label: "GPT-5 Nano accuracy without questions",
+            label: "GPT-5 Nano options-only accuracy vs. 25% chance",
         },
         {
-            value: "4.43 pp",
-            label: "Accuracy drop after option shuffling",
+            value: "−4.43 pp",
+            label: "GPT-5 Nano accuracy change after option shuffling",
         },
     ],
+
     contribution:
         "Designed and implemented MMLU dataset-forensics analyses and controlled evaluation experiments across Llama 3.2 3B and GPT-5 Nano. Investigated answer-position and length biases, duplicate questions, options-only performance, answer shuffling, lexical negation, and typo robustness. Built reusable Python evaluation utilities supporting multiple model providers, consistent experiment execution, hashed question identifiers, checkpointing, and resumable CSV-based result collection.",
 

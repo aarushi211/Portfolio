@@ -2108,10 +2108,12 @@ dialog::backdrop {
 /* Card */
 
 .project-gallery-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
     overflow: hidden;
+    cursor: pointer;
 
     background: var(--surf);
     border: 1px solid var(--line);
@@ -2128,6 +2130,10 @@ dialog::backdrop {
     transform: translateY(-4px);
     border-color: var(--ac);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.project-gallery-card:focus-within {
+    border-color: var(--ac);
 }
 
 .project-gallery-card:focus-visible {
@@ -2232,6 +2238,8 @@ dialog::backdrop {
 }
 
 .project-gallery-demo {
+    position: relative;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
@@ -2670,14 +2678,7 @@ dialog::backdrop {
     }
 }
 
-/* Make the entire card clickable */
-
-.project-gallery-card {
-    position: relative;
-    cursor: pointer;
-}
-
-/* Stretch the case study link across the entire card */
+/* Stretch the case-study link across the entire card. */
 .project-gallery-stretched-link::after {
     content: "";
     position: absolute;
@@ -2685,26 +2686,11 @@ dialog::backdrop {
     z-index: 1;
 }
 
-/* Keep the demo link above the stretched overlay */
-.project-gallery-demo {
-    position: relative;
-    z-index: 2;
-}
-
-/* Show hover feedback across the whole card */
-.project-gallery-card:hover {
-    border-color: var(--ac);
-}
-
-.project-gallery-card:focus-within {
-    border-color: var(--ac);
-}
-
-/* Keyboard focus indicator for the full card */
+/* Keyboard focus indicator for the full card. */
 .project-gallery-stretched-link:focus-visible::after {
     outline: 2px solid var(--ac);
     outline-offset: 3px;
-    border-radius: inherit;
+    border-radius: 16px;
 }
 
 .home-contact-actions {

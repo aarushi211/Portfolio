@@ -20,7 +20,7 @@ export default function ProjectHighlights({
             <div className="project-case-heading">
                 <div>
                     <span className="project-case-eyebrow">
-                        THE RESULTS
+                        KEY HIGHLIGHTS
                     </span>
                     <h2>At a glance</h2>
                 </div>

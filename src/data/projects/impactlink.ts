@@ -33,16 +33,16 @@ export const impactlink: Project = {
 
     highlights: [
         {
+            value: "Award Winner",
+            label: "Trojan Hacks — Social category",
+        },
+        {
             value: "207",
-            label: "Passing frontend & backend tests",
+            label: "Passing frontend and backend tests",
         },
         {
             value: "Multi-Agent",
-            label: "Stateful proposal generation & review",
-        },
-        {
-            value: "Award Winner",
-            label: "Trojan Hacks — Social category",
+            label: "Stateful proposal workflows with human review",
         },
     ],
 
