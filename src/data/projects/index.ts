@@ -4,7 +4,7 @@ import type { Project } from "./types";
 import { impactlink } from "./impactlink";
 import { clauselens } from "./clauselens";
 import { safeGamesLA } from "./safegamesla";
-// import { evaluationLab } from "./evaluation-lab";
+import { evaluationLab } from "./evaluation-lab";
 // import { codeSummarization } from "./code-summarization";
 // import { multiAgentDebate } from "./multi-agent-debate";
 
@@ -14,9 +14,9 @@ export const projects: Project[] = [
     impactlink,
     clauselens,
     safeGamesLA,
-    //   evaluationLab,
-    //   codeSummarization,
-    //   multiAgentDebate,
+    evaluationLab,
+    // codeSummarization,
+    // multiAgentDebate,
 ];
 
 export const categories = [

@@ -27,7 +27,7 @@ export const safeGamesLA: Project = {
     // live: "",
 
     // Add these when the assets are ready.
-    // demoVideo: "",
+    demoVideo: "https://youtu.be/dgjrY2rhmpc?si=an8aEA7QZ9rWsSPP",
     // demoLength: "",
     thumbnail: "/images/olympic-rings.svg",
     architectureImage: "/images/safegamesla-architecture.png",
