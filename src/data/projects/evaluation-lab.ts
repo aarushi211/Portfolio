@@ -35,6 +35,20 @@ export const evaluationLab: Project = {
     problem:
         "LLM benchmarks are widely used to compare model capabilities, but aggregate accuracy can hide dataset artifacts, answer-selection biases, and sensitivity to seemingly irrelevant input changes. Without additional analysis, it is difficult to distinguish improvements in task performance from behaviors influenced by benchmark structure.",
 
+    highlights: [
+        {
+            value: "14,042",
+            label: "MMLU questions evaluated",
+        },
+        {
+            value: "39.70%",
+            label: "GPT-5 Nano accuracy without questions",
+        },
+        {
+            value: "4.43 pp",
+            label: "Accuracy drop after option shuffling",
+        },
+    ],
     contribution:
         "Designed and implemented MMLU dataset-forensics analyses and controlled evaluation experiments across Llama 3.2 3B and GPT-5 Nano. Investigated answer-position and length biases, duplicate questions, options-only performance, answer shuffling, lexical negation, and typo robustness. Built reusable Python evaluation utilities supporting multiple model providers, consistent experiment execution, hashed question identifiers, checkpointing, and resumable CSV-based result collection.",
 

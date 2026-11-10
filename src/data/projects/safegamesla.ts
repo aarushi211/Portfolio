@@ -38,6 +38,21 @@ export const safeGamesLA: Project = {
     problem:
         "Planning public safety for large events requires understanding historical incident patterns, transportation access, nearby emergency resources, and local conditions. This information is scattered across different datasets, making it difficult for planners to compare venues and identify potential coordination needs.",
 
+    highlights: [
+        {
+            value: "14",
+            label: "LA28 venues analyzed",
+        },
+        {
+            value: "Multi-Source",
+            label: "Geospatial & historical data integration",
+        },
+        {
+            value: "Verified AI",
+            label: "LLM-assisted queries with Python calculations",
+        },
+    ],
+
     contribution:
         "Developed a venue-focused analytics application integrating public-safety, transit, weather, event, and emergency-service datasets. Implemented geospatial analysis, interactive visualizations, venue comparisons, and a natural-language assistant that connects LLM-generated tool requests to deterministic Python calculations.",
 

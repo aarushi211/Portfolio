@@ -31,11 +31,27 @@ export const clauselens: Project = {
     thumbnail:
         "/images/clauselens-scale.svg",
 
+
     overview:
         "ClauseLens helps users understand complex Terms of Service agreements through document analysis and clause-grounded question answering. It retrieves relevant passages, generates answers with inspectable source references, and abstains when sufficient supporting evidence is unavailable. The application uses a fine-tuned, quantized 7B language model with CPU-only inference support.",
 
     problem:
         "Terms of Service agreements are lengthy and difficult to interpret. Users often accept them without understanding important conditions. General-purpose LLMs can also generate unsupported answers without showing the clauses on which their responses are based.",
+
+    highlights: [
+        {
+            value: "0.88",
+            label: "Mean Q&A faithfulness",
+        },
+        {
+            value: "Hybrid RAG",
+            label: "BM25 + dense retrieval + reranking",
+        },
+        {
+            value: "CPU-Only",
+            label: "Quantized 7B model inference",
+        },
+    ],
 
     contribution:
         "Built an end-to-end Terms of Service analysis application, including PDF ingestion, hybrid retrieval, evidence-grounded question answering, quantized model inference, frontend and backend integration, cloud deployment, and evaluation.",

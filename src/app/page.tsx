@@ -209,27 +209,41 @@ export default function Home() {
         <Toolkit />
       </section>
 
+
       {/* CONTACT */}
       <section className="home-contact">
         <span className="home-eyebrow">
           LET'S CONNECT
         </span>
 
-        <h2>Have something interesting in mind?</h2>
+        <h2>Let's build something useful.</h2>
 
         <p>
-          I'm always interested in discussing AI systems,
-          software engineering, and opportunities to
-          build useful products.
+          I'm exploring opportunities in AI and software
+          engineering, particularly with teams building
+          real-world products. If you're working on
+          something interesting, I'd love to connect.
         </p>
 
-        <a
-          href={`mailto:${SITE.email}`}
-          className="btn pri"
-        >
-          Get in touch ↗
-        </a>
+        <div className="home-hero-actions home-contact-actions">
+          <a
+            href={`mailto:${SITE.email}`}
+            className="btn pri"
+          >
+            Get in touch ↗
+          </a>
+
+          <a
+            href={SITE.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+          >
+            View resume ↗
+          </a>
+        </div>
       </section>
+
 
     </div>
   );

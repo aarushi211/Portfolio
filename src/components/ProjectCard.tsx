@@ -8,12 +8,11 @@ export default function ProjectCard({
 }: {
   project: Project;
 }) {
+  const caseStudyUrl = `/projects/${project.slug}`;
+  const demoUrl = project.demoVideo || project.overviewVideo;
+
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="project-gallery-card"
-      aria-label={`View ${project.name} case study`}
-    >
+    <article className="project-gallery-card">
       <div className="project-gallery-image">
         {project.thumbnail ? (
           <Image
@@ -45,10 +44,31 @@ export default function ProjectCard({
           ))}
         </div>
 
-        <span className="project-gallery-link">
-          View case study <span aria-hidden="true">→</span>
-        </span>
+        <div className="project-gallery-actions">
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-gallery-demo"
+              aria-label={`Watch ${project.name} demo (opens in a new tab)`}
+            >
+              <span aria-hidden="true">▶</span>
+              Watch demo
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          )}
+
+          <Link
+            href={caseStudyUrl}
+            className="project-gallery-link project-gallery-stretched-link"
+            aria-label={`View ${project.name} case study`}
+          >
+            View case study
+            <span aria-hidden="true"> →</span>
+          </Link>
+        </div>
       </div>
-    </Link>
+    </article>
   );
 }

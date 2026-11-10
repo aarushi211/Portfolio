@@ -4,6 +4,10 @@ export type Project = {
     name: string;
     featured?: boolean;
     demoLength?: string;
+    highlights?: {
+        value: string;
+        label: string;
+    }[];
 
     desc: string;
     tags: string[];

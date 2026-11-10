@@ -31,6 +31,21 @@ export const impactlink: Project = {
     problem:
         "Nonprofits often face a fragmented grant application process: finding relevant funding opportunities, interpreting eligibility requirements, writing detailed proposals, and preparing budgets. These tasks require significant manual research, coordination, and repeated revisions.",
 
+    highlights: [
+        {
+            value: "207",
+            label: "Passing frontend & backend tests",
+        },
+        {
+            value: "Multi-Agent",
+            label: "Stateful proposal generation & review",
+        },
+        {
+            value: "Award Winner",
+            label: "Trojan Hacks — Social category",
+        },
+    ],
+
     contribution:
         "Co-developed the original hackathon prototype, then independently rebuilt and expanded most of the frontend and backend. Implemented grant retrieval and ranking, stateful AI proposal workflows, funder-specific revisions, human review, and structured budget preparation.",
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/site";
 import { VideoTabs, Arch } from "@/components/Interactive";
+import ProjectHighlights from "@/components/ProjectHighlights";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -99,7 +100,7 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           )}
         </div>
-
+        <ProjectHighlights highlights={project.highlights} />
         {/* VIDEO */}
         {hasVideo && (
           <section className="project-case-block">

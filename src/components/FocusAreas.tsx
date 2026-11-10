@@ -36,7 +36,7 @@ const AREAS = [
     title: "Backend & infra",
     description:
       "Working with APIs, data processing pipelines, service integrations, and deployment — understanding the software infrastructure needed to support AI applications.",
-    href: "/projects/safe-games-la",
+    href: "/projects/safegamesla",
     project: "Safe Games LA",
   },
 ];
