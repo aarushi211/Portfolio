@@ -7,13 +7,25 @@ import FocusAreas from "@/components/FocusAreas";
 import { SITE, projects } from "@/data/site";
 
 export default function Home() {
+  // Use the following function if you want to control the order of featured projects manually.
+  // const FEATURED_SLUGS = [
+  //   "clauselens",
+  //   "impactlink",
+  //   "evaluation-lab",
+  // ];
+
+  // const featured = FEATURED_SLUGS
+  //   .map((slug) => projects.find((p) => p.slug === slug))
+  //   .filter((p): p is (typeof projects)[number] => Boolean(p));
+
   const featured = projects
     .filter((p) => p.featured)
     .sort((a, b) => {
       if (a.slug === "clauselens") return -1;
       if (b.slug === "clauselens") return 1;
       return 0;
-    });
+    })
+    .slice(0, 2);
 
   return (
     <div className="wrap home-page">
