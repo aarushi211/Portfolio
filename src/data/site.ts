@@ -1,9 +1,10 @@
 export const SITE = {
   name: "Aarushi Jain",
-  email: "aarushij.dev@gmail.com",
+  email: "hi@aarushi.org",
   github: "https://github.com/aarushi211", linkedin: "https://www.linkedin.com/in/aarushi-jain-01413a207/", youtube: "https://youtube.com/playlist?list=PLK-r5aSmVF6k&si=TyJ-A880ni2z0oIm", resume: "https://drive.google.com/file/d/1AfP4HcNfMaySp4KD7rxT_cxmYilDqPaj/view?usp=sharing",
   photo: "/images/AarushiPhoto.jpeg",
   location: "Seattle, WA",
+  calendly: "https://calendly.com/aarushij-dev/30min",
 };
 
 export {

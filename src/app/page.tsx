@@ -58,10 +58,7 @@ export default function Home() {
               Explore my work ↗
             </Link>
 
-            <a
-              className="btn"
-              href={`mailto:${SITE.email}`}
-            >
+            <a className="btn" href="#contact">
               Get in touch
             </a>
           </div>
@@ -211,7 +208,7 @@ export default function Home() {
 
 
       {/* CONTACT */}
-      <section className="home-contact">
+      <section id="contact" className="home-contact">
         <span className="home-eyebrow">
           LET'S CONNECT
         </span>
@@ -225,12 +222,22 @@ export default function Home() {
           something interesting, I'd love to connect.
         </p>
 
+        {/* CONTACT ACTIONS */}
         <div className="home-hero-actions home-contact-actions">
           <a
-            href={`mailto:${SITE.email}`}
+            href={SITE.calendly}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn pri"
           >
-            Get in touch ↗
+            Schedule a 30-Min Chat ↗
+          </a>
+
+          <a
+            href={`mailto:${SITE.email}`}
+            className="btn"
+          >
+            Send an Email ↗
           </a>
 
           <a

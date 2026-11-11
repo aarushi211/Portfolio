@@ -2701,3 +2701,11 @@ dialog::backdrop {
     flex-wrap: wrap;
     margin-top: 24px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+#contact {
+    scroll-margin-top: 90px;
+}
