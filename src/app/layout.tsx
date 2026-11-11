@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import { SITE } from "@/data/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: { default: `${SITE.name} · AI Engineer`, template: `%s · ${SITE.name}` },
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <span>Want to work together? <a href={`mailto:${SITE.email}`} style={{ color: "var(--cy)" }}>{SITE.email}</a></span>
           <span><a href={SITE.github || "#"}>GitHub</a> · <a href={SITE.linkedin || "#"}>LinkedIn</a> · <a href={SITE.resume || "#"}>Resume</a></span>
         </div></footer>
+        <Analytics />
       </body>
     </html>
   );
