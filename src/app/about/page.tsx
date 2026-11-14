@@ -169,26 +169,43 @@ export default function About() {
           </div>
         </section>
 
-        {/* Certification */}
+
+
+        {/* Certifications & Training */}
         <section className="va-section">
           <div className="va-section-heading">
             <span className="va-eyebrow">CONTINUOUS LEARNING</span>
-            <h2>Certifications.</h2>
+            <h2>Certifications & Training.</h2>
+            <p>
+              Developer certifications and structured learning
+              programs that strengthened my technical foundations.
+            </p>
           </div>
 
           <div className="recognition-grid">
             {certifications.map((cert) => (
-              <article className="recognition-card" key={cert.title}>
-                <span className="recognition-icon">{cert.icon}</span>
+              <article
+                className="recognition-card certification-card"
+                key={cert.title}
+              >
                 <h3>{cert.title}</h3>
-                <p>{cert.issuer}</p>
-                <a
-                  href={cert.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Verify credential ↗
-                </a>
+                <strong>{cert.issuer}</strong>
+
+                <ul className="cert-topic-list">
+                  {cert.topics.map((topic) => (
+                    <li key={topic}>{topic}</li>
+                  ))}
+                </ul>
+
+                {cert.href && (
+                  <a
+                    href={cert.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Verify credential ↗
+                  </a>
+                )}
               </article>
             ))}
           </div>

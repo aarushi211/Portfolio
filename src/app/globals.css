@@ -2855,3 +2855,56 @@ html {
 .leadership-role:first-child::before {
     background: var(--ac);
 }
+
+/* Certification learning areas */
+
+/* Certifications */
+
+.certification-card {
+    padding: 28px 30px;
+}
+
+.certification-card h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.certification-card>strong {
+    color: var(--cy);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.cert-topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+}
+
+.cert-topic-list li {
+    position: relative;
+    padding-left: 17px;
+    margin-bottom: 9px;
+    color: var(--mut);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.cert-topic-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--ac);
+}
+
+.certification-card>a {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+@media (max-width: 640px) {
+    .certification-card {
+        padding: 22px;
+    }
+}

@@ -42,8 +42,27 @@ export const certifications = [
     {
         title: "Claude Certified Developer — Foundations",
         issuer: "Anthropic",
-        icon: "✦",
-        href: "https://www.credly.com/badges/0591c3e2-b8d4-4ab6-aff6-f2b5e0cc20b0/public_url"
+        // icon: "✦",
+        href: "https://www.credly.com/badges/0591c3e2-b8d4-4ab6-aff6-f2b5e0cc20b0/public_url",
+        topics: [
+            "Claude API & Application Integration",
+            "Agentic Workflows & Tool Use",
+            "Prompt & Context Engineering",
+            "Model Selection & Optimization",
+            "MCP, Security, Claude Code & Evaluation",
+        ],
+    },
+    {
+        title: "Analytics Insight Launchpad",
+        issuer: "PwC",
+        // icon: "📊",
+        href: "https://drive.google.com/file/d/1gPma0WeWxw2pOzKNz8mereH-IZ6LfIK4/view?usp=sharing",
+        topics: [
+            "IT Fundamentals",
+            "RDBMS",
+            "Programming Fundamentals",
+            "Introduction to Data Engineering",
+        ],
     },
 ];
 
