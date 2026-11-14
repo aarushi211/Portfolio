@@ -1,6 +1,12 @@
 
 import Photo from "@/components/Photo";
 import { SITE } from "@/data/site";
+import {
+  awards,
+  additionalRecognition,
+  certifications,
+  leadership,
+} from "@/data/recognition";
 
 export const metadata = {
   title: "About",
@@ -121,6 +127,88 @@ export default function About() {
           </div>
 
         </section>
+
+        {/* Awards & Recognition */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">MILESTONES</span>
+            <h2>A few moments worth celebrating.</h2>
+            <p>
+              From hackathon wins to academic recognition,
+              each one represents something I learned along the way.
+            </p>
+          </div>
+
+          <div className="recognition-grid">
+            {awards.map((award) => (
+              <article className="recognition-card" key={award.event}>
+                <span className="recognition-icon">{award.icon}</span>
+                <h3>{award.title}</h3>
+                <strong>{award.event}</strong>
+                <p>{award.detail}</p>
+
+                {"href" in award && award.href && (
+                  <a
+                    href={award.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View project ↗
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+
+          <div className="recognition-additional">
+            {additionalRecognition.map((item) => (
+              <span key={item.event}>
+                <strong>{item.title}</strong> · {item.event}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Certification */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">CONTINUOUS LEARNING</span>
+            <h2>Certifications.</h2>
+          </div>
+
+          <div className="recognition-grid">
+            {certifications.map((cert) => (
+              <article className="recognition-card" key={cert.title}>
+                <span className="recognition-icon">{cert.icon}</span>
+                <h3>{cert.title}</h3>
+                <p>{cert.issuer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="va-section">
+          <div className="va-section-heading">
+            <span className="va-eyebrow">LEADERSHIP & COMMUNITY</span>
+            <h2>Growing beyond the code.</h2>
+            <p>
+              Some of my most valuable lessons came from
+              working with people, not just technology.
+            </p>
+          </div>
+
+          <div className="recognition-grid">
+            {leadership.map((role) => (
+              <article className="recognition-card" key={role.title}>
+                <h3>{role.title}</h3>
+                <strong>{role.organization}</strong>
+                <p>{role.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
 
         {/* Sports */}
         <section className="va-section">
