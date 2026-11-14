@@ -182,10 +182,18 @@ export default function About() {
                 <span className="recognition-icon">{cert.icon}</span>
                 <h3>{cert.title}</h3>
                 <p>{cert.issuer}</p>
+                <a
+                  href={cert.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Verify credential ↗
+                </a>
               </article>
             ))}
           </div>
         </section>
+
 
         {/* Leadership */}
         <section className="va-section">
@@ -193,21 +201,33 @@ export default function About() {
             <span className="va-eyebrow">LEADERSHIP & COMMUNITY</span>
             <h2>Growing beyond the code.</h2>
             <p>
-              Some of my most valuable lessons came from
-              working with people, not just technology.
+              Leadership, collaboration, and community involvement
+              have been an important part of my journey.
             </p>
           </div>
 
           <div className="recognition-grid">
-            {leadership.map((role) => (
-              <article className="recognition-card" key={role.title}>
-                <h3>{role.title}</h3>
-                <strong>{role.organization}</strong>
-                <p>{role.description}</p>
+            {leadership.map((entry) => (
+              <article
+                className="recognition-card"
+                key={entry.organization}
+              >
+                <h3>{entry.organization}</h3>
+                <p>{entry.period}</p>
+
+                <div className="leadership-timeline">
+                  {entry.roles.map((role) => (
+                    <div className="leadership-role" key={role.title}>
+                      <strong>{role.title}</strong>
+                      <span>{role.period}</span>
+                    </div>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
         </section>
+
 
 
         {/* Sports */}

@@ -43,20 +43,38 @@ export const certifications = [
         title: "Claude Certified Developer — Foundations",
         issuer: "Anthropic",
         icon: "✦",
+        href: "https://www.credly.com/badges/0591c3e2-b8d4-4ab6-aff6-f2b5e0cc20b0/public_url"
     },
 ];
 
+
 export const leadership = [
     {
-        title: "Executive Board Member",
         organization: "UPES ACM-W Student Chapter",
-        description:
-            "Continued serving in chapter leadership after my tenure as Editorial Head.",
+        period: "Nov 2020 – May 2024",
+        roles: [
+            {
+                title: "Board of Executives (BOE)",
+                period: "Jun 2023 – May 2024",
+            },
+            {
+                title: "Editorial Head",
+                period: "Jun 2022 – Jun 2023",
+            },
+            {
+                title: "Core Team Member — Editorial & PR/Sponsorship",
+                period: "Nov 2020 – Jun 2022",
+            },
+        ],
     },
     {
-        title: "Editorial Head",
-        organization: "UPES ACM-W Student Chapter",
-        description:
-            "Led editorial activities and collaborated with the student chapter team on community initiatives.",
+        organization: "PwC",
+        period: "Feb 2024 – Jun 2024",
+        roles: [
+            {
+                title: "Campus Ambassador",
+                period: "Feb 2024 – Jun 2024",
+            },
+        ],
     },
 ];
